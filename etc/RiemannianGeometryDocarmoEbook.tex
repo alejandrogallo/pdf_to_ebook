@@ -1,0 +1,703 @@
+\documentclass{article}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{geometry}
+
+
+\newcounter{ch}
+\newcounter{sec}[ch]
+\newcounter{subsec}[sec]
+
+\newcommand{\ch}{\refstepcounter{ch}}
+\newcommand{\sect}{\refstepcounter{sec}}
+\newcommand{\subsec}{\refstepcounter{subsec}}
+
+\paperwidth  =  160 mm
+\paperheight = 210 mm
+
+\newlength{\downcut}
+\newlength{\upcut}
+\newlength{\upborder}
+\newlength{\downborder}
+\newlength{\leftborder}
+\newlength{\rightborder}
+\newlength{\leftpairborder}
+\newlength{\rightpairborder}
+\newlength{\leftoddborder}
+\newlength{\rightoddborder}
+
+\downcut = 100mm
+\upcut = 100mm
+\upborder = 0mm
+\downborder = 0mm
+\leftborder = 0mm
+\rightborder = 0mm
+\leftpairborder = \leftborder
+\leftoddborder = \leftborder
+\rightpairborder = \rightborder
+\rightoddborder = \rightborder
+
+\begin{document}
+\bookmark[page=1]{CHAPTER O-DIFFERENTIABLE MANIFOLDS }
+\bookmark[page=1]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=3]{\ \ \ \ \ 2. Differentiable manifolds; tangent space}
+\bookmark[page=21]{\ \ \ \ \ 3. Immersions and embeddings; examples }
+\bookmark[page=29]{\ \ \ \ \ 4. Other examples of manifolds. Orientation }
+\bookmark[page=49]{\ \ \ \ \ 5. Vector fields; brackets. Topology of manifolds}
+\bookmark[page=69]{CHAPTER 1-RIEMANNIAN METRICS}
+\bookmark[page=69]{\ \ \ \ \ 1. Introduction}
+\bookmark[page=75]{\ \ \ \ \ 2. Riemannian Metrics}
+\bookmark[page=95]{CHAPTER 2-AFFINE CONNECTIONS; RIEMANNIAN CONNECTIONS}
+\bookmark[page=95]{\ \ \ \ \ 1. Introduction}
+\bookmark[page=97]{\ \ \ \ \ 2. Affine connections}
+\bookmark[page=105]{\ \ \ \ \ 3. Riemannian connections}
+\bookmark[page=119]{CHAPTER 3-GEODESICS; CONVEX NEIGHBORHOODS }
+\bookmark[page=119]{\ \ \ \ \ 1. Introduction}
+\bookmark[page=121]{\ \ \ \ \ 2. The geodesic flow}
+\bookmark[page=133]{\ \ \ \ \ 3. Minimizing properties of geodesies}
+\bookmark[page=149]{\ \ \ \ \ 4. Convex neighborhoods}
+\bookmark[page=175]{CHAPTER 4-CURVATURE}
+\bookmark[page=175]{\ \ \ \ \ 1. Introduction}
+\bookmark[page=177]{\ \ \ \ \ 2. Curvature}
+\bookmark[page=185]{\ \ \ \ \ 3. Sectional curvature}
+\bookmark[page=193]{\ \ \ \ \ 4. Ricci curvature and scalar curvature}
+\bookmark[page=199]{\ \ \ \ \ 5. Tensors on Riemannian manifolds }
+\bookmark[page=219]{Chapter 5: Jacobi Fields}
+\bookmark[page=219]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=219]{\ \ \ \ \ 2. The Jacobi equation }
+\bookmark[page=231]{\ \ \ \ \ 3. Conjugate points }
+\bookmark[page=247]{CHAPTER 6-ISOMETRIC IMMERSIONS }
+\bookmark[page=247]{\ \ \ \ \ 1. Introduction 124 }
+\bookmark[page=249]{\ \ \ \ \ 2. The second fundamental form }
+\bookmark[page=267]{\ \ \ \ \ 3. The fundamental equations }
+\bookmark[page=287]{CHAPTER 7-COMPLETE MANIFOLDS; HOPF-RINOW AND HADAMARD THEOREMS }
+\bookmark[page=287]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=289]{\ \ \ \ \ 2. Complete manifolds; Hopf-Rinow Theorem }
+\bookmark[page=297]{\ \ \ \ \ 3. The Theorem of Hadamard }
+\bookmark[page=309]{CHAPTER 8-SPACES OF CONSTANT CURVATURE  }
+\bookmark[page=309]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=311]{\ \ \ \ \ 2. Theorem of Cartan on the determination of the metric by means of the curvature }
+\bookmark[page=319]{\ \ \ \ \ 3. Hyperbolic space }
+\bookmark[page=323]{\ \ \ \ \ 4. Space forms }
+\bookmark[page=335]{\ \ \ \ \ 5. Isornetries of the hyperbolic space; Theorem of Liouvffle . . . }
+\bookmark[page=381]{CHAPTER 9-VARIATIONS OF ENERGY }
+\bookmark[page=381]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=381]{\ \ \ \ \ 2. Formulas for the first and second variations of energy }
+\bookmark[page=399]{\ \ \ \ \ 3. The theorems of Bonnet-Myers and of Synge-Weinstein .... }
+\bookmark[page=419]{CHAPTER 10-THE RAUCH COMPARISON THEOREM . . }
+\bookmark[page=419]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=423]{\ \ \ \ \ 2. The Theorem of Rauch }
+\bookmark[page=441]{\ \ \ \ \ 3. Applications of the Index Lemma to immersions }
+\bookmark[page=453]{\ \ \ \ \ 4. Focal points and an extension of Rauch's Theorem }
+\bookmark[page=483]{CHAPTER 11-THE MORSE INDEX THEOREM }
+\bookmark[page=483]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=483]{\ \ \ \ \ 2. The Index Theorem }
+\bookmark[page=505]{CHAPTER 12-THE FUNDAMENTAL GROUP OF MANIFOLDS OF NEGATIVE CURVATURE  }
+\bookmark[page=505]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=507]{\ \ \ \ \ 2. Existence of closed geodesies }
+%\bookmark[page=515]{\ \ \ \ \ 3. Preissman Theorem }
+\bookmark[page=529]{CHAPTER 13-THE SPHERE THEOREM }
+\bookmark[page=529]{\ \ \ \ \ 1. Introduction }
+\bookmark[page=533]{\ \ \ \ \ 2. The cut locus }
+\bookmark[page=551]{\ \ \ \ \ 3. The estimate of the injectivity radius }
+\bookmark[page=565]{\ \ \ \ \ 4. The Sphere Theorem }
+\bookmark[page=575]{\ \ \ \ \ 5. Some further developments }
+
+
+
+
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 1, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 1, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 2, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 2, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 3, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 3, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 4, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 4, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 5, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 5, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 6, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 6, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 7, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 7, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 8, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 8, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 9, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 9, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 10, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 10, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 11, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 11, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 12, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 12, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 13, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 13, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 14, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 14, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 15, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 15, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 16, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 16, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 17, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 17, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 18, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 18, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 19, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 19, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 20, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 20, angle = 90]{Riemannian_Geometry.pdf}
+%\end{document}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 21, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 21, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 22, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 22, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 23, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 23, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 24, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 24, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 25, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 25, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 26, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 26, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 27, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 27, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 28, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 28, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 29, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 29, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 30, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 30, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 31, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 31, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 32, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 32, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 33, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 33, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 34, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 34, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 35, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 35, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 36, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 36, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 37, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 37, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 38, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 38, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 39, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 39, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 40, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 40, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 41, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 41, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 42, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 42, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 43, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 43, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 44, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 44, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 45, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 45, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 46, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 46, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 47, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 47, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 48, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 48, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 49, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 49, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 50, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 50, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 51, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 51, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 52, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 52, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 53, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 53, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 54, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 54, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 55, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 55, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 56, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 56, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 57, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 57, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 58, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 58, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 59, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 59, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 60, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 60, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 61, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 61, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 62, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 62, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 63, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 63, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 64, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 64, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 65, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 65, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 66, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 66, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 67, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 67, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 68, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 68, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 69, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 69, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 70, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 70, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 71, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 71, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 72, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 72, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 73, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 73, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 74, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 74, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 75, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 75, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 76, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 76, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 77, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 77, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 78, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 78, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 79, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 79, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 80, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 80, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 81, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 81, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 82, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 82, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 83, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 83, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 84, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 84, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 85, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 85, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 86, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 86, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 87, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 87, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 88, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 88, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 89, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 89, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 90, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 90, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 91, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 91, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 92, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 92, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 93, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 93, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 94, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 94, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 95, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 95, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 96, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 96, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 97, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 97, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 98, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 98, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 99, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 99, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 100, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 100, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 101, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 101, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 102, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 102, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 103, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 103, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 104, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 104, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 105, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 105, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 106, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 106, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 107, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 107, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 108, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 108, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 109, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 109, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 110, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 110, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 111, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 111, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 112, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 112, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 113, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 113, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 114, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 114, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 115, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 115, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 116, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 116, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 117, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 117, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 118, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 118, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 119, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 119, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 120, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 120, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 121, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 121, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 122, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 122, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 123, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 123, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 124, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 124, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 125, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 125, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 126, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 126, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 127, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 127, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 128, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 128, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 129, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 129, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 130, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 130, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 131, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 131, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 132, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 132, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 133, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 133, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 134, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 134, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 135, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 135, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 136, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 136, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 137, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 137, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 138, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 138, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 139, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 139, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 140, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 140, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 141, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 141, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 142, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 142, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 143, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 143, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 144, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 144, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 145, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 145, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 146, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 146, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 147, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 147, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 148, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 148, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 149, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 149, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 150, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 150, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 151, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 151, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 152, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 152, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 153, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 153, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 154, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 154, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 155, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 155, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 156, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 156, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 157, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 157, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 158, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 158, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 159, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 159, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 160, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 160, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 161, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 161, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 162, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 162, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 163, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 163, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 164, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 164, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 165, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 165, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 166, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 166, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 167, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 167, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 168, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 168, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 169, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 169, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 170, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 170, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 171, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 171, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 172, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 172, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 173, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 173, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 174, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 174, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 175, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 175, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 176, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 176, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 177, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 177, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 178, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 178, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 179, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 179, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 180, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 180, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 181, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 181, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 182, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 182, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 183, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 183, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 184, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 184, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 185, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 185, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 186, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 186, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 187, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 187, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 188, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 188, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 189, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 189, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 190, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 190, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 191, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 191, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 192, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 192, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 193, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 193, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 194, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 194, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 195, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 195, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 196, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 196, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 197, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 197, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 198, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 198, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 199, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 199, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 200, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 200, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 201, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 201, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 202, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 202, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 203, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 203, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 204, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 204, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 205, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 205, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 206, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 206, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 207, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 207, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 208, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 208, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 209, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 209, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 210, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 210, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 211, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 211, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 212, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 212, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 213, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 213, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 214, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 214, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 215, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 215, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 216, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 216, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 217, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 217, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 218, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 218, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 219, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 219, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 220, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 220, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 221, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 221, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 222, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 222, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 223, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 223, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 224, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 224, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 225, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 225, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 226, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 226, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 227, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 227, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 228, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 228, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 229, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 229, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 230, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 230, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 231, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 231, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 232, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 232, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 233, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 233, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 234, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 234, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 235, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 235, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 236, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 236, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 237, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 237, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 238, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 238, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 239, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 239, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 240, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 240, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 241, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 241, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 242, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 242, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 243, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 243, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 244, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 244, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 245, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 245, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 246, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 246, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 247, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 247, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 248, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 248, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 249, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 249, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 250, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 250, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 251, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 251, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 252, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 252, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 253, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 253, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 254, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 254, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 255, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 255, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 256, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 256, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 257, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 257, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 258, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 258, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 259, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 259, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 260, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 260, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 261, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 261, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 262, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 262, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 263, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 263, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 264, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 264, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 265, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 265, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 266, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 266, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 267, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 267, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 268, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 268, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 269, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 269, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 270, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 270, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 271, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 271, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 272, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 272, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 273, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 273, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 274, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 274, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 275, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 275, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 276, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 276, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 277, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 277, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 278, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 278, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 279, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 279, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 280, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 280, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 281, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 281, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 282, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 282, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 283, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 283, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 284, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 284, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 285, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 285, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 286, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 286, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 287, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 287, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 288, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 288, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 289, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 289, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downcut mm \rightpairborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 290, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftpairborder mm \downborder mm \rightpairborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 290, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downcut mm \rightoddborder mm \upborder mm,width=210 mm, height = 160 mm ,  pages = 291, angle = 90]{Riemannian_Geometry.pdf}
+\includepdf[trim=\leftoddborder mm \downborder mm \rightoddborder mm \upcut mm,width=210 mm, height = 160 mm ,  pages = 291, angle = 90]{Riemannian_Geometry.pdf}
+
+
+
+
+
+
+
+\end{document}
